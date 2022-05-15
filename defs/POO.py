@@ -29,3 +29,5 @@ def cadastro(res):
     sleep(0.5)
 
     name = str(input("Informe seu nome, por favor: "))
+
+    function.ler()
