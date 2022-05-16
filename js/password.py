@@ -2,12 +2,13 @@ import json
 from js import function
 
 
-def password(name):
+def password():
     p = 'arrebatamento2'
     while True:
         sen = input("Senha de Administrador: ")
 
         if sen == p:
+            name = input("Seu nome completo: ")
             function.ler(name)
             break
         else:

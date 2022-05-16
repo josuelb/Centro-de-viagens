@@ -34,10 +34,9 @@ def cadastrar(res):
 def cadastro(res):
     print('Voçe digitou {}'.format(res))
     sleep(0.5)
-    name = input("Seu nome completo: ")
-    password.password(name)
+    password.password()
 
 
 def look():
     name = input("Seu nome completo: ")
-    function.ver(name)
+    function.ver()

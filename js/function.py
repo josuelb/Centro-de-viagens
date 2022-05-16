@@ -2,18 +2,18 @@ import json
 
 
 def adicionar(pessoa, name):
-    out_file = json.dumps(pessoa, indent=4)
-    with open(f"js/json/{name}.json", 'w', newline='', encoding='utf-8') as outfile:
-        outfile.write(out_file)
+    with open(f"js/json/{name}.json", 'w', newline='') as outfile:
+        json.dump(pessoa, outfile, indent=True)
 
 
 def ler(name):
     file = open(f"js/json/{name}.json")
-    dados = file.read()
+    dados = json.load(file)
     print(dados)
+    print(type(dados))
 
 
-def ver(name):
+def ver(ver):
     file = open(f"js/json/{name}.json")
-    dado = file.read()
-    print(dado["viagem"])
+    dado = json.load(file)
+    print(dado['viagem'])
