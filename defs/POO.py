@@ -1,5 +1,5 @@
 from time import sleep
-from js import function
+from js import password, function
 
 
 def cadastrar(res):
@@ -7,18 +7,25 @@ def cadastrar(res):
 
     pessoa = {}
 
-    sleep(0.5)
-    pessoa['nome'] = str(input("Nome Completo: ").strip())
-    sleep(0.5)
-    pessoa['CPF'] = input("Seu CPF: ").strip()
-    sleep(0.5)
-    p = input("Deseja fazer alguma viagem agora? [S/N] ").strip()
+    Nome = str(input("Nome Completo: ").strip()).capitalize()
+
+    p = input("Olá {}, deseja fazer alguma viagem agora? [S/N] ".format(Nome)).strip()
     if p == 'S':
-        pessoa['viagem'] = str(input("Deseja ir para onde? ").strip())
+        viagem = str(input("Deseja ir para onde? ").strip())
     else:
+        viagem = ' '
         print("OKAY!")
+    sleep(0.5)
+
+    pessoa[Nome] = {
+        "nome": Nome,
+        "cpf": input("Seu CPF: ").strip(),
+        "viagem": viagem
+    }
+    sleep(0.5)
 
     function.adicionar(pessoa)
+
     sleep(0.5)
 
     print(pessoa)
@@ -28,6 +35,5 @@ def cadastro(res):
     print('Voçe digitou {}'.format(res))
     sleep(0.5)
 
-    name = str(input("Informe seu nome, por favor: "))
+    password.password()
 
-    function.ler()

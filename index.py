@@ -9,7 +9,7 @@ while i == True:
 
     op1 = """
         1-Cadastrar
-        2-Ver cadastro
+        2-Ver cadastros
         3-ver viagem
         4-Sair
     """
@@ -18,8 +18,9 @@ while i == True:
     res = int(input("O que deseja? ").strip())
     sleep(0.5)
 
-    if res != int:
+    if type(res) != int:
         print("Digite um NÚMERO!!!!")
+
 
     if res == 1:
         POO.cadastrar(res)
