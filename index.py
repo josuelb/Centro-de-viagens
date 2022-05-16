@@ -26,3 +26,8 @@ while i == True:
         POO.cadastrar(res)
     elif res == 2:
         POO.cadastro(res)
+    elif res == 3:
+        POO.look()
+    elif res == 4:
+        print("Volte sempre!!!!")
+        break

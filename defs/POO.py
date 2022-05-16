@@ -7,9 +7,9 @@ def cadastrar(res):
 
     pessoa = {}
 
-    Nome = str(input("Nome Completo: ").strip()).capitalize()
+    name = str(input("Nome Completo: ").strip())
 
-    p = input("Olá {}, deseja fazer alguma viagem agora? [S/N] ".format(Nome)).strip()
+    p = input("Olá {}, deseja fazer alguma viagem agora? [S/N] ".format(name)).strip()
     if p == 'S':
         viagem = str(input("Deseja ir para onde? ").strip())
     else:
@@ -17,14 +17,14 @@ def cadastrar(res):
         print("OKAY!")
     sleep(0.5)
 
-    pessoa[Nome] = {
-        "nome": Nome,
+    pessoa[name] = {
+        "nome": name,
         "cpf": input("Seu CPF: ").strip(),
         "viagem": viagem
     }
     sleep(0.5)
 
-    function.adicionar(pessoa)
+    function.adicionar(pessoa, name)
 
     sleep(0.5)
 
@@ -34,6 +34,10 @@ def cadastrar(res):
 def cadastro(res):
     print('Voçe digitou {}'.format(res))
     sleep(0.5)
+    name = input("Seu nome completo: ")
+    password.password(name)
 
-    password.password()
 
+def look():
+    name = input("Seu nome completo: ")
+    function.ver(name)
