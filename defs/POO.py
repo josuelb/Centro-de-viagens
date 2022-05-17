@@ -1,42 +1,29 @@
 from time import sleep
-from js import password, function
+from js import function
 
 
-def cadastrar(res):
-    print('Voçe digitou {}'.format(res))
 
-    pessoa = {}
+def cadastrar():
+    viagem = ''
 
-    name = str(input("Nome Completo: ").strip())
-
-    p = input("Olá {}, deseja fazer alguma viagem agora? [S/N] ".format(name)).strip()
-    if p == 'S':
-        viagem = str(input("Deseja ir para onde? ").strip())
+    name = input('Seu nome completo: ')
+    sleep(0.3)
+    cpf = input('CPF: ')
+    sleep(0.3)
+    desc = str(input("Deseja marcar alguma viagem? [S/N] ").upper().strip())
+    if desc == 'S':
+        viagem = input('Para onde vamos? ')
+    elif desc == 'N':
+        print("Certo.")
     else:
-        viagem = ' '
-        print("OKAY!")
+        print("Resposta invalida. responda com 'S' para sim e 'N' para não.")
     sleep(0.5)
 
-    pessoa[name] = {
-        "nome": name,
-        "cpf": input("Seu CPF: ").strip(),
-        "viagem": viagem
-    }
-    sleep(0.5)
+    dados = {'nome': name, 'cpf': cpf, 'viagem': viagem}
 
-    function.adicionar(pessoa, name)
-
-    sleep(0.5)
-
-    print(pessoa)
-
-
-def cadastro(res):
-    print('Voçe digitou {}'.format(res))
-    sleep(0.5)
-    password.password()
+    function.adicionar(name, dados)
 
 
 def look():
     name = input("Seu nome completo: ")
-    function.ver()
+    function.ler(name)

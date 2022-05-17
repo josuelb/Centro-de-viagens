@@ -9,9 +9,8 @@ while i == True:
 
     op1 = """
         1-Cadastrar
-        2-Ver cadastros
-        3-ver viagem
-        4-Sair
+        2-Ver cadastro
+        3-Sair
     """
     print(op1)
 
@@ -21,13 +20,10 @@ while i == True:
     if type(res) != int:
         print("Digite um NÚMERO!!!!")
 
-
     if res == 1:
-        POO.cadastrar(res)
+        POO.cadastrar()
     elif res == 2:
-        POO.cadastro(res)
-    elif res == 3:
         POO.look()
-    elif res == 4:
+    elif res == 3:
         print("Volte sempre!!!!")
         break
